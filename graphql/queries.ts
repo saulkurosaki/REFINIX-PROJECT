@@ -36,34 +36,33 @@ export const DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY = gql`
 `;
 
 // Query to get deals chart
-
-// export const DASHBOARD_DEALS_CHART_QUERY = gql`
-//   query DashboardDealsChart(
-//     $filter: DealStageFilter!
-//     $sorting: [DealStageSort!]
-//     $paging: OffsetPaging
-//   ) {
-//     dealStages(filter: $filter, sorting: $sorting, paging: $paging) {
-//       # Get all deal stages
-//       nodes {
-//         id
-//         title
-//         # Get the sum of all deals in this stage and group by closeDateMonth and closeDateYear
-//         dealsAggregate {
-//           groupBy {
-//             closeDateMonth
-//             closeDateYear
-//           }
-//           sum {
-//             value
-//           }
-//         }
-//       }
-//       # Get the total count of all deals in this stage
-//       totalCount
-//     }
-//   }
-// `;
+export const DASHBOARD_DEALS_CHART_QUERY = gql`
+  query DashboardDealsChart(
+    $filter: DealStageFilter!
+    $sorting: [DealStageSort!]
+    $paging: OffsetPaging
+  ) {
+    dealStages(filter: $filter, sorting: $sorting, paging: $paging) {
+      # Get all deal stages
+      nodes {
+        id
+        title
+        # Get the sum of all deals in this stage and group by closeDateMonth and closeDateYear
+        dealsAggregate {
+          groupBy {
+            closeDateMonth
+            closeDateYear
+          }
+          sum {
+            value
+          }
+        }
+      }
+      # Get the total count of all deals in this stage
+      totalCount
+    }
+  }
+`;
 
 // Query to get latest activities deals
 
