@@ -92,35 +92,34 @@ export const DASHBOARD_LATEST_ACTIVITIES_DEALS_QUERY = gql`
 `;
 
 // Query to get latest activities audits
-
-// export const DASHBOARD_LATEST_ACTIVITIES_AUDITS_QUERY = gql`
-//   query DashboardLatestActivitiesAudits(
-//     $filter: AuditFilter!
-//     $sorting: [AuditSort!]
-//     $paging: OffsetPaging
-//   ) {
-//     audits(filter: $filter, sorting: $sorting, paging: $paging) {
-//       totalCount
-//       nodes {
-//         id
-//         action
-//         targetEntity
-//         targetId
-//         changes {
-//           field
-//           from
-//           to
-//         }
-//         createdAt
-//         user {
-//           id
-//           name
-//           avatarUrl
-//         }
-//       }
-//     }
-//   }
-// `;
+export const DASHBOARD_LATEST_ACTIVITIES_AUDITS_QUERY = gql`
+  query DashboardLatestActivitiesAudits(
+    $filter: AuditFilter!
+    $sorting: [AuditSort!]
+    $paging: OffsetPaging
+  ) {
+    audits(filter: $filter, sorting: $sorting, paging: $paging) {
+      totalCount
+      nodes {
+        id
+        action
+        targetEntity
+        targetId
+        changes {
+          field
+          from
+          to
+        }
+        createdAt
+        user {
+          id
+          name
+          avatarUrl
+        }
+      }
+    }
+  }
+`;
 
 // Query to get companies list
 
