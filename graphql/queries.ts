@@ -146,25 +146,24 @@ export const COMPANIES_LIST_QUERY = gql`
 `;
 
 // Query to get users list
-
-// export const USERS_SELECT_QUERY = gql`
-//   query UsersSelect(
-//     $filter: UserFilter!
-//     $sorting: [UserSort!]
-//     $paging: OffsetPaging!
-//   ) {
-//     # Get all users
-//     users(filter: $filter, sorting: $sorting, paging: $paging) {
-//       totalCount # Get the total count of users
-//       # Get specific fields for each user
-//       nodes {
-//         id
-//         name
-//         avatarUrl
-//       }
-//     }
-//   }
-// `;
+export const USERS_SELECT_QUERY = gql`
+  query UsersSelect(
+    $filter: UserFilter!
+    $sorting: [UserSort!]
+    $paging: OffsetPaging!
+  ) {
+    # Get all users
+    users(filter: $filter, sorting: $sorting, paging: $paging) {
+      totalCount # Get the total count of users
+      # Get specific fields for each user
+      nodes {
+        id
+        name
+        avatarUrl
+      }
+    }
+  }
+`;
 
 // Query to get contacts associated with a company
 
