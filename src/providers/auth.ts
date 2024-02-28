@@ -84,12 +84,12 @@ export const authProvider: AuthBindings = {
         headers: {},
         meta: {
           rawQuery: `
-              query Me {
-                me {
-                  name
-                }
+            query Me {
+              me {
+                name
               }
-            `,
+            }
+          `,
         },
       });
 
@@ -127,18 +127,18 @@ export const authProvider: AuthBindings = {
         meta: {
           // get the user information such as name, email, etc.
           rawQuery: `
-              query Me {
-                me {
-                  id
-                  name
-                  email
-                  phone
-                  jobTitle
-                  timezone
-                  avatarUrl
-                }
+            query Me {
+              me {
+                id
+                name
+                email
+                phone
+                jobTitle
+                timezone
+                avatarUrl
               }
-            `,
+            }
+          `,
         },
       });
 
