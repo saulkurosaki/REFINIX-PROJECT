@@ -122,29 +122,28 @@ export const DASHBOARD_LATEST_ACTIVITIES_AUDITS_QUERY = gql`
 `;
 
 // Query to get companies list
-
-// export const COMPANIES_LIST_QUERY = gql`
-//   query CompaniesList(
-//     $filter: CompanyFilter!
-//     $sorting: [CompanySort!]
-//     $paging: OffsetPaging!
-//   ) {
-//     companies(filter: $filter, sorting: $sorting, paging: $paging) {
-//       totalCount
-//       nodes {
-//         id
-//         name
-//         avatarUrl
-//         # Get the sum of all deals in this company
-//         dealsAggregate {
-//           sum {
-//             value
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const COMPANIES_LIST_QUERY = gql`
+  query CompaniesList(
+    $filter: CompanyFilter!
+    $sorting: [CompanySort!]
+    $paging: OffsetPaging!
+  ) {
+    companies(filter: $filter, sorting: $sorting, paging: $paging) {
+      totalCount
+      nodes {
+        id
+        name
+        avatarUrl
+        # Get the sum of all deals in this company
+        dealsAggregate {
+          sum {
+            value
+          }
+        }
+      }
+    }
+  }
+`;
 
 // Query to get users list
 
