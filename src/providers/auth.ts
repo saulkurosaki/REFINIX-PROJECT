@@ -61,18 +61,18 @@ export const authProvider: AuthBindings = {
     };
   },
 
-  //   onError: async (error) => {
-  //     // a check to see if the error is an authentication error
-  //     // if so, set logout to true
-  //     if (error.statusCode === "UNAUTHENTICATED") {
-  //       return {
-  //         logout: true,
-  //         ...error,
-  //       };
-  //     }
+  onError: async (error) => {
+    // a check to see if the error is an authentication error
+    // if so, set logout to true
+    if (error.statusCode === "UNAUTHENTICATED") {
+      return {
+        logout: true,
+        ...error,
+      };
+    }
 
-  //     return { error };
-  //   },
+    return { error };
+  },
 
   //   check: async () => {
   //     try {
