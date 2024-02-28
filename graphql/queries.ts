@@ -65,32 +65,31 @@ export const DASHBOARD_DEALS_CHART_QUERY = gql`
 `;
 
 // Query to get latest activities deals
-
-// export const DASHBOARD_LATEST_ACTIVITIES_DEALS_QUERY = gql`
-//   query DashboardLatestActivitiesDeals(
-//     $filter: DealFilter!
-//     $sorting: [DealSort!]
-//     $paging: OffsetPaging
-//   ) {
-//     deals(filter: $filter, sorting: $sorting, paging: $paging) {
-//       totalCount
-//       nodes {
-//         id
-//         title
-//         stage {
-//           id
-//           title
-//         }
-//         company {
-//           id
-//           name
-//           avatarUrl
-//         }
-//         createdAt
-//       }
-//     }
-//   }
-// `;
+export const DASHBOARD_LATEST_ACTIVITIES_DEALS_QUERY = gql`
+  query DashboardLatestActivitiesDeals(
+    $filter: DealFilter!
+    $sorting: [DealSort!]
+    $paging: OffsetPaging
+  ) {
+    deals(filter: $filter, sorting: $sorting, paging: $paging) {
+      totalCount
+      nodes {
+        id
+        title
+        stage {
+          id
+          title
+        }
+        company {
+          id
+          name
+          avatarUrl
+        }
+        createdAt
+      }
+    }
+  }
+`;
 
 // Query to get latest activities audits
 
