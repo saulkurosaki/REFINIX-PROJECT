@@ -234,19 +234,18 @@ export const TASKS_QUERY = gql`
 `;
 
 // Query to get task stages for select
-
-// export const TASK_STAGES_SELECT_QUERY = gql`
-//   query TaskStagesSelect(
-//     $filter: TaskStageFilter!
-//     $sorting: [TaskStageSort!]
-//     $paging: OffsetPaging!
-//   ) {
-//     taskStages(filter: $filter, sorting: $sorting, paging: $paging) {
-//       totalCount
-//       nodes {
-//         id
-//         title
-//       }
-//     }
-//   }
-// `;
+export const TASK_STAGES_SELECT_QUERY = gql`
+  query TaskStagesSelect(
+    $filter: TaskStageFilter!
+    $sorting: [TaskStageSort!]
+    $paging: OffsetPaging!
+  ) {
+    taskStages(filter: $filter, sorting: $sorting, paging: $paging) {
+      totalCount
+      nodes {
+        id
+        title
+      }
+    }
+  }
+`;
