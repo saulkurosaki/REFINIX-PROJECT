@@ -166,27 +166,26 @@ export const USERS_SELECT_QUERY = gql`
 `;
 
 // Query to get contacts associated with a company
-
-// export const COMPANY_CONTACTS_TABLE_QUERY = gql`
-//   query CompanyContactsTable(
-//     $filter: ContactFilter!
-//     $sorting: [ContactSort!]
-//     $paging: OffsetPaging!
-//   ) {
-//     contacts(filter: $filter, sorting: $sorting, paging: $paging) {
-//       totalCount
-//       nodes {
-//         id
-//         name
-//         avatarUrl
-//         jobTitle
-//         email
-//         phone
-//         status
-//       }
-//     }
-//   }
-// `;
+export const COMPANY_CONTACTS_TABLE_QUERY = gql`
+  query CompanyContactsTable(
+    $filter: ContactFilter!
+    $sorting: [ContactSort!]
+    $paging: OffsetPaging!
+  ) {
+    contacts(filter: $filter, sorting: $sorting, paging: $paging) {
+      totalCount
+      nodes {
+        id
+        name
+        avatarUrl
+        jobTitle
+        email
+        phone
+        status
+      }
+    }
+  }
+`;
 
 // Query to get task stages list
 
