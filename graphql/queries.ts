@@ -188,22 +188,21 @@ export const COMPANY_CONTACTS_TABLE_QUERY = gql`
 `;
 
 // Query to get task stages list
-
-// export const TASK_STAGES_QUERY = gql`
-//   query TaskStages(
-//     $filter: TaskStageFilter!
-//     $sorting: [TaskStageSort!]
-//     $paging: OffsetPaging!
-//   ) {
-//     taskStages(filter: $filter, sorting: $sorting, paging: $paging) {
-//       totalCount # Get the total count of task stages
-//       nodes {
-//         id
-//         title
-//       }
-//     }
-//   }
-// `;
+export const TASK_STAGES_QUERY = gql`
+  query TaskStages(
+    $filter: TaskStageFilter!
+    $sorting: [TaskStageSort!]
+    $paging: OffsetPaging!
+  ) {
+    taskStages(filter: $filter, sorting: $sorting, paging: $paging) {
+      totalCount # Get the total count of task stages
+      nodes {
+        id
+        title
+      }
+    }
+  }
+`;
 
 // Query to get tasks list
 
