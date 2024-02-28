@@ -30,27 +30,26 @@ export const CREATE_COMPANY_MUTATION = gql`
 `;
 
 // Mutation to update company details
-
-// export const UPDATE_COMPANY_MUTATION = gql`
-//   mutation UpdateCompany($input: UpdateOneCompanyInput!) {
-//     updateOneCompany(input: $input) {
-//       id
-//       name
-//       totalRevenue
-//       industry
-//       companySize
-//       businessType
-//       country
-//       website
-//       avatarUrl
-//       salesOwner {
-//         id
-//         name
-//         avatarUrl
-//       }
-//     }
-//   }
-// `;
+export const UPDATE_COMPANY_MUTATION = gql`
+  mutation UpdateCompany($input: UpdateOneCompanyInput!) {
+    updateOneCompany(input: $input) {
+      id
+      name
+      totalRevenue
+      industry
+      companySize
+      businessType
+      country
+      website
+      avatarUrl
+      salesOwner {
+        id
+        name
+        avatarUrl
+      }
+    }
+  }
+`;
 
 // Mutation to update task stage of a task
 
