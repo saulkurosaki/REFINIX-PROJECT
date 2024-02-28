@@ -205,34 +205,33 @@ export const TASK_STAGES_QUERY = gql`
 `;
 
 // Query to get tasks list
-
-// export const TASKS_QUERY = gql`
-//   query Tasks(
-//     $filter: TaskFilter!
-//     $sorting: [TaskSort!]
-//     $paging: OffsetPaging!
-//   ) {
-//     tasks(filter: $filter, sorting: $sorting, paging: $paging) {
-//       totalCount # Get the total count of tasks
-//       nodes {
-//         id
-//         title
-//         description
-//         dueDate
-//         completed
-//         stageId
-//         # Get user details associated with this task
-//         users {
-//           id
-//           name
-//           avatarUrl
-//         }
-//         createdAt
-//         updatedAt
-//       }
-//     }
-//   }
-// `;
+export const TASKS_QUERY = gql`
+  query Tasks(
+    $filter: TaskFilter!
+    $sorting: [TaskSort!]
+    $paging: OffsetPaging!
+  ) {
+    tasks(filter: $filter, sorting: $sorting, paging: $paging) {
+      totalCount # Get the total count of tasks
+      nodes {
+        id
+        title
+        description
+        dueDate
+        completed
+        stageId
+        # Get user details associated with this task
+        users {
+          id
+          name
+          avatarUrl
+        }
+        createdAt
+        updatedAt
+      }
+    }
+  }
+`;
 
 // Query to get task stages for select
 
