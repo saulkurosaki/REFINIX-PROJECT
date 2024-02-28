@@ -75,28 +75,27 @@ export const CREATE_TASK_MUTATION = gql`
 `;
 
 // Mutation to update a task details
-
-// export const UPDATE_TASK_MUTATION = gql`
-//   mutation UpdateTask($input: UpdateOneTaskInput!) {
-//     updateOneTask(input: $input) {
-//       id
-//       title
-//       completed
-//       description
-//       dueDate
-//       stage {
-//         id
-//         title
-//       }
-//       users {
-//         id
-//         name
-//         avatarUrl
-//       }
-//       checklist {
-//         title
-//         checked
-//       }
-//     }
-//   }
-// `;
+export const UPDATE_TASK_MUTATION = gql`
+  mutation UpdateTask($input: UpdateOneTaskInput!) {
+    updateOneTask(input: $input) {
+      id
+      title
+      completed
+      description
+      dueDate
+      stage {
+        id
+        title
+      }
+      users {
+        id
+        name
+        avatarUrl
+      }
+      checklist {
+        title
+        checked
+      }
+    }
+  }
+`;
