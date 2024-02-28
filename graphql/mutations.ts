@@ -61,19 +61,18 @@ export const UPDATE_TASK_STAGE_MUTATION = gql`
 `;
 
 // Mutation to create a new task
-
-// export const CREATE_TASK_MUTATION = gql`
-//   mutation CreateTask($input: CreateOneTaskInput!) {
-//     createOneTask(input: $input) {
-//       id
-//       title
-//       stage {
-//         id
-//         title
-//       }
-//     }
-//   }
-// `;
+export const CREATE_TASK_MUTATION = gql`
+  mutation CreateTask($input: CreateOneTaskInput!) {
+    createOneTask(input: $input) {
+      id
+      title
+      stage {
+        id
+        title
+      }
+    }
+  }
+`;
 
 // Mutation to update a task details
 
