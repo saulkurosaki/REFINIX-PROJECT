@@ -18,17 +18,16 @@ export const UPDATE_USER_MUTATION = gql`
 `;
 
 // Mutation to create company
-
-// export const CREATE_COMPANY_MUTATION = gql`
-//   mutation CreateCompany($input: CreateOneCompanyInput!) {
-//     createOneCompany(input: $input) {
-//       id
-//       salesOwner {
-//         id
-//       }
-//     }
-//   }
-// `;
+export const CREATE_COMPANY_MUTATION = gql`
+  mutation CreateCompany($input: CreateOneCompanyInput!) {
+    createOneCompany(input: $input) {
+      id
+      salesOwner {
+        id
+      }
+    }
+  }
+`;
 
 // Mutation to update company details
 
