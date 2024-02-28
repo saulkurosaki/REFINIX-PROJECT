@@ -52,15 +52,14 @@ export const authProvider: AuthBindings = {
   },
 
   // simply remove the accessToken from localStorage for the logout
+  logout: async () => {
+    localStorage.removeItem("access_token");
 
-  //   logout: async () => {
-  //     localStorage.removeItem("access_token");
-
-  //     return {
-  //       success: true,
-  //       redirectTo: "/login",
-  //     };
-  //   },
+    return {
+      success: true,
+      redirectTo: "/login",
+    };
+  },
 
   //   onError: async (error) => {
   //     // a check to see if the error is an authentication error
