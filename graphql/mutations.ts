@@ -52,14 +52,13 @@ export const UPDATE_COMPANY_MUTATION = gql`
 `;
 
 // Mutation to update task stage of a task
-
-// export const UPDATE_TASK_STAGE_MUTATION = gql`
-//   mutation UpdateTaskStage($input: UpdateOneTaskInput!) {
-//     updateOneTask(input: $input) {
-//       id
-//     }
-//   }
-// `;
+export const UPDATE_TASK_STAGE_MUTATION = gql`
+  mutation UpdateTaskStage($input: UpdateOneTaskInput!) {
+    updateOneTask(input: $input) {
+      id
+    }
+  }
+`;
 
 // Mutation to create a new task
 
