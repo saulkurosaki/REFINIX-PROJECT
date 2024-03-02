@@ -1,4 +1,5 @@
-import { Col, Row } from "antd"
+import { DealsChart, UpcomingEvents } from "@/components";
+import { Col, Row } from "antd";
 
 export const Home = () => {
   return (
@@ -6,7 +7,7 @@ export const Home = () => {
       <Row
         gutter={[32, 32]}
         style={{
-          marginTop: '32px',
+          marginTop: "32px",
         }}
       >
         <Col
@@ -14,10 +15,10 @@ export const Home = () => {
           sm={24}
           xl={8}
           style={{
-            height: '460px',
+            height: "460px",
           }}
         >
-          CalendarUpcomingEvents
+          <UpcomingEvents />
         </Col>
 
         <Col
@@ -25,12 +26,12 @@ export const Home = () => {
           sm={24}
           xl={8}
           style={{
-            height: '460px',
+            height: "460px",
           }}
         >
-          DashboardDealChart
+          <DealsChart />
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
