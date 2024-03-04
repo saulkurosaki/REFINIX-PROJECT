@@ -1,4 +1,4 @@
-import { DealsChart, UpcomingEvents } from "@/components";
+import { DealsChart, TotalCountCard, UpcomingEvents } from "@/components";
 import { Col, Row } from "antd";
 
 export const Home = () => {
@@ -6,13 +6,13 @@ export const Home = () => {
     <div>
       <Row gutter={[32, 32]}>
         <Col xs={24} sm={24} xl={8}>
-          DashboardTotalCountCard
+          <TotalCountCard />
         </Col>
         <Col xs={24} sm={24} xl={8}>
-          DashboardTotalCountCard
+          <TotalCountCard />
         </Col>
         <Col xs={24} sm={24} xl={8}>
-          DashboardTotalCountCard
+          <TotalCountCard />
         </Col>
       </Row>
 
