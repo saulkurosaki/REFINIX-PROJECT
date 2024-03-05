@@ -33,7 +33,18 @@ const TotalCountCard = ({ resource, isLoading, totalCount }: Props) => {
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Text>
+        <Text
+          size="xxxl"
+          strong
+          style={{
+            flex: 1,
+            whiteSpace: "nowrap",
+            flexShrink: 0,
+            textAlign: "start",
+            marginLeft: "48px",
+            fontVariantNumeric: "tabular-nums",
+          }}
+        >
           {isLoading ? (
             <Skeleton.Button
               style={{
