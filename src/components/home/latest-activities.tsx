@@ -25,17 +25,17 @@ const LatestActivities = () => {
 
   const dealIds = audit?.data.map((audit) => audit?.targetId);
 
-  //   const { data: deals, isLoading: isLoadingDeals } = useList({
-  //     resource: "deals",
-  //     queryOptions: { enabled: !!dealIds?.length },
-  //     pagination: {
-  //       mode: "off",
-  //     },
-  //     filters: [{ field: "id", operator: "in", value: dealIds }],
-  //     meta: {
-  //       gqlQuery: DASHBOARD_LATEST_ACTIVITIES_DEALS_QUERY,
-  //     },
-  //   });
+  const { data: deals, isLoading: isLoadingDeals } = useList({
+    resource: "deals",
+    queryOptions: { enabled: !!dealIds?.length },
+    pagination: {
+      mode: "off",
+    },
+    filters: [{ field: "id", operator: "in", value: dealIds }],
+    meta: {
+      gqlQuery: DASHBOARD_LATEST_ACTIVITIES_DEALS_QUERY,
+    },
+  });
 
   if (isError) {
     console.log(error);
