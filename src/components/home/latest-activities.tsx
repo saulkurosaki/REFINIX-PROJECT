@@ -78,14 +78,14 @@ const LatestActivities = () => {
               <List.Item>
                 <List.Item.Meta
                   title={dayjs(deal?.createdAt).format("MMM DD, YYYY - HH:mm")}
-                  //   avatar={
-                  //     <CustomAvatar
-                  //       shape="square"
-                  //       size={48}
-                  //       src={deal?.company.avatarUrl}
-                  //       name={deal?.company.name}
-                  //     />
-                  //   }
+                  avatar={
+                    <CustomAvatar
+                      shape="square"
+                      size={48}
+                      src={deal?.company.avatarUrl}
+                      name={deal?.company.name}
+                    />
+                  }
                 />
               </List.Item>
             );
