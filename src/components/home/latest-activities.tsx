@@ -4,9 +4,45 @@ import { title } from "process";
 import React from "react";
 import { Text } from "../text";
 import LatestActivitiesSkeleton from "../skeleton/latest-activities";
+import { useList } from "@refinedev/core";
+import {
+  DASHBOARD_LATEST_ACTIVITIES_AUDITS_QUERY,
+  DASHBOARD_LATEST_ACTIVITIES_DEALS_QUERY,
+} from "@/graphql/queries";
 
 const LatestActivities = () => {
-  const isLoading = true;
+  const {
+    data: audit,
+    isLoading: isLoadingAudit,
+    isError,
+    error,
+  } = useList({
+    resource: "audits",
+    meta: {
+      gqlQuery: DASHBOARD_LATEST_ACTIVITIES_AUDITS_QUERY,
+    },
+  });
+
+  const dealIds = audit?.data.map((audit) => audit?.targetId);
+
+  //   const { data: deals, isLoading: isLoadingDeals } = useList({
+  //     resource: "deals",
+  //     queryOptions: { enabled: !!dealIds?.length },
+  //     pagination: {
+  //       mode: "off",
+  //     },
+  //     filters: [{ field: "id", operator: "in", value: dealIds }],
+  //     meta: {
+  //       gqlQuery: DASHBOARD_LATEST_ACTIVITIES_DEALS_QUERY,
+  //     },
+  //   });
+
+  if (isError) {
+    console.log(error);
+    return null;
+  }
+
+  const isLoading = isLoadingAudit || isLoadingDeals;
 
   return (
     <Card
