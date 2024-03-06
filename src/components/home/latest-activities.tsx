@@ -1,10 +1,13 @@
 import { UnorderedListOutlined } from "@ant-design/icons";
-import { Card } from "antd";
+import { Card, List } from "antd";
 import { title } from "process";
 import React from "react";
 import { Text } from "../text";
+import LatestActivitiesSkeleton from "../skeleton/latest-activities";
 
 const LatestActivities = () => {
+  const isLoading = true;
+
   return (
     <Card
       headStyle={{ padding: "16px" }}
@@ -17,7 +20,17 @@ const LatestActivities = () => {
           </Text>
         </div>
       }
-    ></Card>
+    >
+      {isLoading ? (
+        <List
+          itemLayout="horizontal"
+          dataSource={Array.from({ length: 5 }).map((_, i) => ({ id: i }))}
+          renderItem={(_, index) => <LatestActivitiesSkeleton key={index} />}
+        />
+      ) : (
+        <List />
+      )}
+    </Card>
   );
 };
 
