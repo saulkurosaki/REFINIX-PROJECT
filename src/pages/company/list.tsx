@@ -4,7 +4,13 @@ import { COMPANIES_LIST_QUERY } from "@/graphql/queries";
 import { Company } from "@/graphql/schema.types";
 import { currencyNumber } from "@/utilities";
 import { SearchOutlined } from "@ant-design/icons";
-import { CreateButton, FilterDropdown, List, useTable } from "@refinedev/antd";
+import {
+  CreateButton,
+  EditButton,
+  FilterDropdown,
+  List,
+  useTable,
+} from "@refinedev/antd";
 import { getDefaultFilter, useGo } from "@refinedev/core";
 import { Input, Space, Table } from "antd";
 
@@ -77,6 +83,17 @@ export const CompanyList = () => {
             <Text>
               {currencyNumber(company?.dealsAggregate?.[0].sum?.value || 0)}
             </Text>
+          )}
+        />
+
+        <Table.Column<Company>
+          dataIndex="id"
+          title="Actions"
+          fixed="right"
+          render={(value) => (
+            <Space>
+              <EditButton hideText size="small" recordItemId={value} />
+            </Space>
           )}
         />
       </Table>
