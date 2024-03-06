@@ -1,4 +1,5 @@
 import CustomAvatar from "@/components/custom-avatar";
+import { Text } from "@/components/text";
 import { COMPANIES_LIST_QUERY } from "@/graphql/queries";
 import { SearchOutlined } from "@ant-design/icons";
 import { CreateButton, FilterDropdown, List, useTable } from "@refinedev/antd";
@@ -61,6 +62,8 @@ export const CompanyList = () => {
                 name={record.name}
                 src={record.avatarUrl}
               />
+
+              <Text style={{ whiteSpace: "nowrap" }}>{record.name}</Text>
             </Space>
           )}
         />
