@@ -54,9 +54,9 @@ export const CompanyList = () => {
         },
       ],
     },
-    // meta: {
-    //   gqlQuery: COMPANIES_LIST_QUERY,
-    // },
+    meta: {
+      gqlQuery: COMPANIES_LIST_QUERY,
+    },
   });
 
   return (
