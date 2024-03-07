@@ -34,9 +34,9 @@ export const CompanyList = () => {
         },
       ];
     },
-    // pagination: {
-    //   pageSize: 12,
-    // },
+    pagination: {
+      pageSize: 12,
+    },
     // sorters: {
     //   initial: [
     //     {
