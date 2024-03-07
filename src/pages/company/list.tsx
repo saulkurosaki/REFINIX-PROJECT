@@ -25,15 +25,15 @@ export const CompanyList = () => {
     GetFieldsFromList<CompaniesListQuery>
   >({
     resource: "companies",
-    // onSearch: (values) => {
-    //   return [
-    //     {
-    //       field: "name",
-    //       operator: "contains",
-    //       value: values.name,
-    //     },
-    //   ];
-    // },
+    onSearch: (values) => {
+      return [
+        {
+          field: "name",
+          operator: "contains",
+          value: values.name,
+        },
+      ];
+    },
     // pagination: {
     //   pageSize: 12,
     // },
