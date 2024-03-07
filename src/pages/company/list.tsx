@@ -37,14 +37,14 @@ export const CompanyList = () => {
     pagination: {
       pageSize: 12,
     },
-    // sorters: {
-    //   initial: [
-    //     {
-    //       field: "createdAt",
-    //       order: "desc",
-    //     },
-    //   ],
-    // },
+    sorters: {
+      initial: [
+        {
+          field: "createdAt",
+          order: "desc",
+        },
+      ],
+    },
     // filters: {
     //   initial: [
     //     {
