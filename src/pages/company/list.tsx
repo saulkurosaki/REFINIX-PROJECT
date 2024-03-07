@@ -45,15 +45,15 @@ export const CompanyList = () => {
         },
       ],
     },
-    // filters: {
-    //   initial: [
-    //     {
-    //       field: "name",
-    //       operator: "contains",
-    //       value: undefined,
-    //     },
-    //   ],
-    // },
+    filters: {
+      initial: [
+        {
+          field: "name",
+          operator: "contains",
+          value: undefined,
+        },
+      ],
+    },
     // meta: {
     //   gqlQuery: COMPANIES_LIST_QUERY,
     // },
