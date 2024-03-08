@@ -1,3 +1,5 @@
+import CustomAvatar from "./custom-avatar";
+
 type Props = {
   name: string;
   avatarUrl?: string;
@@ -5,7 +7,17 @@ type Props = {
 };
 
 const SelectOptionWithAvatar = ({ name, avatarUrl, shape }: Props) => {
-  return <div>SelectOptionWithAvatar component Test c:</div>;
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "8px",
+      }}
+    >
+      <CustomAvatar shape={shape} name={name} src={avatarUrl} />
+    </div>
+  );
 };
 
 export default SelectOptionWithAvatar;
