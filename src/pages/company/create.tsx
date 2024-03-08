@@ -36,7 +36,7 @@ export const CreateCompany = () => {
         title="Create Company"
         width={512}
       >
-        {/* <Form {...formProps} layout="vertical">
+        <Form {...formProps} layout="vertical">
           <Form.Item
             label="Company name"
             name="name"
@@ -44,7 +44,7 @@ export const CreateCompany = () => {
           >
             <Input placeholder="Please enter a company name" />
           </Form.Item>
-        </Form> */}
+        </Form>
       </Modal>
     </CompanyList>
   );
