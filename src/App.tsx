@@ -18,6 +18,7 @@ import {
   Register,
   CompanyList,
   CreateCompany,
+  Edit,
 } from "./pages";
 
 import routerBindings, {
@@ -72,6 +73,7 @@ function App() {
                   <Route path="/companies">
                     <Route index element={<CompanyList />} />
                     <Route path="new" element={<CreateCompany />} />
+                    <Route path="edit/:id" element={<Edit />} />
                   </Route>
                 </Route>
               </Routes>
