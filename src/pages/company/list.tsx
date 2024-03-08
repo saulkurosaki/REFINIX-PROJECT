@@ -6,6 +6,7 @@ import { currencyNumber } from "@/utilities";
 import { SearchOutlined } from "@ant-design/icons";
 import {
   CreateButton,
+  DeleteButton,
   EditButton,
   FilterDropdown,
   List,
@@ -125,6 +126,7 @@ export const CompanyList = () => {
           render={(value) => (
             <Space>
               <EditButton hideText size="small" recordItemId={value} />
+              <DeleteButton hideText size="small" recordItemId={value} />
             </Space>
           )}
         />
