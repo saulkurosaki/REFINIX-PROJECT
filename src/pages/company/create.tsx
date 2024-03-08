@@ -55,7 +55,7 @@ export const CreateCompany = () => {
             <Input placeholder="Please enter a company name" />
           </Form.Item>
 
-          {/* <Form.Item
+          <Form.Item
             label="Sales owner"
             name="salesOwnerId"
             rules={[{ required: true }]}
@@ -73,7 +73,7 @@ export const CreateCompany = () => {
                 ),
               }))}
             />
-          </Form.Item> */}
+          </Form.Item>
         </Form>
       </Modal>
     </CompanyList>
