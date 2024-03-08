@@ -1,4 +1,4 @@
-import { Modal } from "antd";
+import { Form, Input, Modal } from "antd";
 import { CompanyList } from "./list";
 import { useModalForm } from "@refinedev/antd";
 import { useGo } from "@refinedev/core";
@@ -29,7 +29,23 @@ export const CreateCompany = () => {
 
   return (
     <CompanyList>
-      <Modal></Modal>
+      <Modal
+        {...modalProps}
+        mask={true}
+        onCancel={goToListPage}
+        title="Create Company"
+        width={512}
+      >
+        {/* <Form {...formProps} layout="vertical">
+          <Form.Item
+            label="Company name"
+            name="name"
+            rules={[{ required: true }]}
+          >
+            <Input placeholder="Please enter a company name" />
+          </Form.Item>
+        </Form> */}
+      </Modal>
     </CompanyList>
   );
 };
