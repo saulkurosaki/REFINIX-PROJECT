@@ -45,7 +45,7 @@ export const EditPage = () => {
                 style={{ width: 96, height: 96, marginBottom: "24px" }}
               />
 
-              {/* <Form.Item
+              <Form.Item
                 label="Sales owner"
                 name="salesOwnerId"
                 initialValue={formProps?.initialValues?.salesOwner?.id}
@@ -65,7 +65,7 @@ export const EditPage = () => {
                     })) ?? []
                   }
                 />
-              </Form.Item> */}
+              </Form.Item>
             </Form>
           </Edit>
         </Col>
