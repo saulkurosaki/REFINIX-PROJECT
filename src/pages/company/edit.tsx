@@ -7,6 +7,7 @@ import { GetFieldsFromList } from "@refinedev/nestjs-query";
 import { UsersSelectQuery } from "@/graphql/types";
 import { USERS_SELECT_QUERY } from "@/graphql/queries";
 import SelectOptionWithAvatar from "@/components/select-option-with-avatar";
+import { companySizeOptions } from "@/constants";
 
 export const EditPage = () => {
   const { saveButtonProps, formProps, formLoading, queryResult } = useForm({
@@ -23,6 +24,9 @@ export const EditPage = () => {
   >({
     resource: "users",
     optionLabel: "name",
+    pagination: {
+      mode: "off",
+    },
     meta: {
       gqlQuery: USERS_SELECT_QUERY,
     },
@@ -65,6 +69,10 @@ export const EditPage = () => {
                     })) ?? []
                   }
                 />
+              </Form.Item>
+
+              <Form.Item>
+                <Select options={companySizeOptions} />
               </Form.Item>
             </Form>
           </Edit>
