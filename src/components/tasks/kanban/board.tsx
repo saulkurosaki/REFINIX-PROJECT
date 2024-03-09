@@ -1,5 +1,9 @@
-export const KanbanBoardContainer = () => {
-  return <div>KanbanBoardContainer component Test c:</div>;
+export const KanbanBoardContainer = ({ children }: React.PropsWithChildren) => {
+  return (
+    <div style={{}}>
+      <div style={{}}>{children}</div>
+    </div>
+  );
 };
 
 export const KanbanBoard = () => {
