@@ -11,6 +11,7 @@ import ContactStatusTag from "./tags/contact-status-tag";
 import { KanbanBoardContainer } from "./tasks/kanban/board";
 import { KanbanBoard } from "./tasks/kanban/board";
 import KanbanColumn from "./tasks/kanban/column";
+import KanbanItem from "./tasks/kanban/item";
 
 export {
   UpcomingEvents,
@@ -26,4 +27,5 @@ export {
   KanbanBoardContainer,
   KanbanBoard,
   KanbanColumn,
+  KanbanItem,
 };
