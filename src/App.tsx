@@ -19,6 +19,7 @@ import {
   CompanyList,
   CreateCompany,
   EditPage,
+  TasksList,
 } from "./pages";
 
 import routerBindings, {
@@ -55,8 +56,11 @@ function App() {
             >
               <Routes>
                 <Route path="/register" element={<Register />} />
+
                 <Route path="/login" element={<Login />} />
+
                 <Route path="/forgot-password" element={<ForgotPassword />} />
+
                 <Route
                   element={
                     <Authenticated
@@ -70,10 +74,15 @@ function App() {
                   }
                 >
                   <Route index element={<Home />} />
+
                   <Route path="/companies">
                     <Route index element={<CompanyList />} />
                     <Route path="new" element={<CreateCompany />} />
                     <Route path="edit/:id" element={<EditPage />} />
+                  </Route>
+
+                  <Route path="/tasks">
+                    <Route index element={<TasksList />} />
                   </Route>
                 </Route>
               </Routes>
