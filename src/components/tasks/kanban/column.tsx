@@ -1,12 +1,14 @@
 import { Text } from "@/components/text";
 import { useDroppable } from "@dnd-kit/core";
-import { Space } from "antd";
+import { Badge, Space } from "antd";
 
 const KanbanColumn = () => {
   const { isOver, setNodeRef, active } = useDroppable({
     id: "",
     data: "",
   });
+
+  const count = 2;
 
   return (
     <div
@@ -24,7 +26,16 @@ const KanbanColumn = () => {
       >
         <Space style={{ width: "100%", justifyContent: "space-between" }}>
           <Space>
-            <Text>TITLE TO DO</Text>
+            <Text
+              ellipsis={{ tooltip: "TITLE TO DO" }}
+              size="xs"
+              strong
+              style={{ textTransform: "uppercase", whiteSpace: "nowrap" }}
+            >
+              TITLE
+            </Text>
+
+            {!!count && <Badge count={count} color="cyan" />}
           </Space>
         </Space>
       </div>
