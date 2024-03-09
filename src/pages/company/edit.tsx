@@ -100,9 +100,9 @@ export const EditPage = () => {
                 <Input placeholder="Country" />
               </Form.Item>
 
-              {/* <Form.Item label="Website" name="website">
+              <Form.Item label="Website" name="website">
                 <Input placeholder="Website" />
-              </Form.Item> */}
+              </Form.Item>
             </Form>
           </Edit>
         </Col>
