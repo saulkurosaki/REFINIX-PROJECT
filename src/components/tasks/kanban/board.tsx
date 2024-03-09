@@ -1,5 +1,7 @@
-const KanbanBoardContainer = () => {
+export const KanbanBoardContainer = () => {
   return <div>KanbanBoardContainer component Test c:</div>;
 };
 
-export default KanbanBoardContainer;
+export const KanbanBoard = () => {
+  return <div>BOARD</div>;
+};
