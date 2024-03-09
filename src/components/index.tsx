@@ -9,6 +9,7 @@ import LatestActivitiesSkeleton from "./skeleton/latest-activities";
 import ProjectCardSkeleton from "./skeleton/project-card";
 import ContactStatusTag from "./tags/contact-status-tag";
 import { KanbanBoardContainer } from "./tasks/kanban/board";
+import { KanbanBoard } from "./tasks/kanban/board";
 import KanbanColumn from "./tasks/kanban/column";
 
 export {
@@ -23,5 +24,6 @@ export {
   ProjectCardSkeleton,
   ContactStatusTag,
   KanbanBoardContainer,
+  KanbanBoard,
   KanbanColumn,
 };

@@ -1,3 +1,15 @@
+import { KanbanBoardContainer, KanbanBoard, KanbanColumn } from "@/components";
+
 export const TasksList = () => {
-  return <div>TasksList component Test c:</div>;
+  return (
+    <>
+      <KanbanBoardContainer>
+        <KanbanBoard>
+          <KanbanColumn></KanbanColumn>
+
+          <KanbanColumn></KanbanColumn>
+        </KanbanBoard>
+      </KanbanBoardContainer>
+    </>
+  );
 };
