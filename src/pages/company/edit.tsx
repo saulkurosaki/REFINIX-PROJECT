@@ -92,9 +92,9 @@ export const EditPage = () => {
                 <Select options={industryOptions} />
               </Form.Item>
 
-              {/* <Form.Item label="Business type">
+              <Form.Item label="Business type">
                 <Select options={businessTypeOptions} />
-              </Form.Item> */}
+              </Form.Item>
 
               {/* <Form.Item label="Country" name="country">
                 <Input placeholder="Country" />
