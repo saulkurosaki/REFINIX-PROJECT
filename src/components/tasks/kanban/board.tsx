@@ -1,3 +1,5 @@
+import { DndContext } from "@dnd-kit/core";
+
 export const KanbanBoardContainer = ({ children }: React.PropsWithChildren) => {
   return (
     <div style={{}}>
@@ -6,6 +8,6 @@ export const KanbanBoardContainer = ({ children }: React.PropsWithChildren) => {
   );
 };
 
-export const KanbanBoard = () => {
-  return <div>BOARD</div>;
+export const KanbanBoard = ({ children }: React.PropsWithChildren) => {
+  return <DndContext>{children}</DndContext>;
 };
