@@ -1,6 +1,7 @@
 import { Text } from "@/components/text";
+import { PlusOutlined } from "@ant-design/icons";
 import { useDroppable } from "@dnd-kit/core";
-import { Badge, Space } from "antd";
+import { Badge, Button, Space } from "antd";
 
 const KanbanColumn = () => {
   const { isOver, setNodeRef, active } = useDroppable({
@@ -9,6 +10,8 @@ const KanbanColumn = () => {
   });
 
   const count = 2;
+
+  const addOnClickHandler = () => {};
 
   return (
     <div
@@ -37,6 +40,12 @@ const KanbanColumn = () => {
 
             {!!count && <Badge count={count} color="cyan" />}
           </Space>
+
+          <Button
+            shape="circle"
+            icon={<PlusOutlined />}
+            onClick={addOnClickHandler}
+          />
         </Space>
       </div>
     </div>
