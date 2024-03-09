@@ -96,9 +96,9 @@ export const EditPage = () => {
                 <Select options={businessTypeOptions} />
               </Form.Item>
 
-              {/* <Form.Item label="Country" name="country">
+              <Form.Item label="Country" name="country">
                 <Input placeholder="Country" />
-              </Form.Item> */}
+              </Form.Item>
 
               {/* <Form.Item label="Website" name="website">
                 <Input placeholder="Website" />
