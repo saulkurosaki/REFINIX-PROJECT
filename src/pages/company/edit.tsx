@@ -12,6 +12,7 @@ import {
   companySizeOptions,
   industryOptions,
 } from "@/constants";
+import { CompanyContactsTable } from "./contacts-table";
 
 export const EditPage = () => {
   const { saveButtonProps, formProps, formLoading, queryResult } = useForm({
@@ -105,6 +106,10 @@ export const EditPage = () => {
               </Form.Item>
             </Form>
           </Edit>
+        </Col>
+
+        <Col xs={24} xl={12}>
+          <CompanyContactsTable />
         </Col>
       </Row>
     </div>
