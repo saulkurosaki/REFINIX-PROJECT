@@ -1,6 +1,6 @@
 import { Text } from "@/components/text";
 import { User } from "@/graphql/schema.types";
-import { EyeOutlined } from "@ant-design/icons";
+import { DeleteOutlined, EyeOutlined, MoreOutlined } from "@ant-design/icons";
 import { Button, Card, ConfigProvider, Dropdown, MenuProps, theme } from "antd";
 import { useMemo } from "react";
 
@@ -35,6 +35,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
         danger: true,
         label: "Delete card",
         key: "2",
+        // icon: <DeleteOutlined />,
         onClick: () => {},
       },
     ];
@@ -66,7 +67,23 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
               items: dropdownItems,
             }}
           >
-            <Button></Button>
+            <Button
+              type="text"
+              shape="circle"
+              icon={
+                <MoreOutlined
+                  style={{
+                    transform: "rotate(90deg)",
+                  }}
+                />
+              }
+              //   onPointerDown={(e) => {
+              //     e.stopPropagation();
+              //   }}
+              //   onClick={(e) => {
+              //     e.stopPropagation();
+              //   }}
+            />
           </Dropdown>
         }
       ></Card>
