@@ -11,7 +11,7 @@ export const TasksList = () => {
       <KanbanBoardContainer>
         <KanbanBoard>
           <KanbanColumn>
-            <KanbanItem></KanbanItem>
+            <KanbanItem>This is my first to do</KanbanItem>
           </KanbanColumn>
 
           <KanbanColumn></KanbanColumn>
