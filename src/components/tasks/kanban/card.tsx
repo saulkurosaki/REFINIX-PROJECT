@@ -77,12 +77,12 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
                   }}
                 />
               }
-              //   onPointerDown={(e) => {
-              //     e.stopPropagation();
-              //   }}
-              //   onClick={(e) => {
-              //     e.stopPropagation();
-              //   }}
+              onPointerDown={(e) => {
+                e.stopPropagation();
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
             />
           </Dropdown>
         }
