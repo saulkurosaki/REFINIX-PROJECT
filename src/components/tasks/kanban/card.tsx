@@ -59,16 +59,16 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
         size="small"
         title={<Text ellipsis={{ tooltip: title }}>{title}</Text>}
         onClick={() => edit()}
-        // extra={
-        //   <Dropdown
-        //     trigger={["click"]}
-        //     menu={{
-        //       items: dropdownItems,
-        //     }}
-        //   >
-        //     <Button></Button>
-        //   </Dropdown>
-        // }
+        extra={
+          <Dropdown
+            trigger={["click"]}
+            menu={{
+              items: dropdownItems,
+            }}
+          >
+            <Button></Button>
+          </Dropdown>
+        }
       ></Card>
     </ConfigProvider>
   );
