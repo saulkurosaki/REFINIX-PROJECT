@@ -55,7 +55,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
         },
       }}
     >
-      {/* <Card
+      <Card
         size="small"
         title={<Text ellipsis={{ tooltip: title }}>{title}</Text>}
         onClick={() => edit()}
@@ -69,7 +69,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
         //     <Button></Button>
         //   </Dropdown>
         // }
-      ></Card> */}
+      ></Card>
     </ConfigProvider>
   );
 };
