@@ -8,9 +8,11 @@ import {
 import { TASKS_QUERY, TASK_STAGES_QUERY } from "@/graphql/queries";
 import { useList } from "@refinedev/core";
 import { TaskStage } from "@/graphql/schema.types";
+import { GetFieldsFromList } from "@refinedev/nestjs-query";
+import { TasksQuery } from "@/graphql/types";
 
 export const TasksList = () => {
-  const { data: stages, isLoading: isLoadingStages } = useList({
+  const { data: stages, isLoading: isLoadingStages } = useList<TaskStage>({
     resource: "taskStages",
     filters: [
       {
@@ -30,7 +32,9 @@ export const TasksList = () => {
     },
   });
 
-  const { data: tasks, isLoading: isLoadingTasks } = useList({
+  const { data: tasks, isLoading: isLoadingTasks } = useList<
+    GetFieldsFromList<TasksQuery>
+  >({
     resource: "tasks",
     sorters: [
       {
@@ -70,7 +74,7 @@ export const TasksList = () => {
     };
   }, [stages, tasks]);
 
-  const handleAddCard = ({ stageId: string }) => {};
+  const handleAddCard = ({ stageId }: { stageId: string }) => {};
 
   return (
     <>
@@ -91,10 +95,7 @@ export const TasksList = () => {
                 {task.title}
               </KanbanItem>
             ))}
-            {/* <KanbanItem>This is my first to do</KanbanItem> */}
           </KanbanColumn>
-
-          {/* <KanbanColumn></KanbanColumn> */}
         </KanbanBoard>
       </KanbanBoardContainer>
     </>
