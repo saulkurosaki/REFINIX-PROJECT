@@ -21,26 +21,26 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
 
   const edit = () => {};
 
-  //   const dropdownItems = useMemo(() => {
-  //     const dropdownItems: MenuProps["items"] = [
-  //       {
-  //         label: "View card",
-  //         key: 1,
-  //         icon: <EyeOutlined />,
-  //         onClick: () => {
-  //           edit();
-  //         },
-  //       },
-  //       {
-  //         danger: true,
-  //         label: "Delete card",
-  //         key: "2",
-  //         onClick: () => {},
-  //       },
-  //     ];
+  const dropdownItems = useMemo(() => {
+    const dropdownItems: MenuProps["items"] = [
+      {
+        label: "View card",
+        key: 1,
+        icon: <EyeOutlined />,
+        onClick: () => {
+          edit();
+        },
+      },
+      {
+        danger: true,
+        label: "Delete card",
+        key: "2",
+        onClick: () => {},
+      },
+    ];
 
-  //     return dropdownItems;
-  //   }, []);
+    return dropdownItems;
+  }, []);
 
   return (
     <ConfigProvider
