@@ -35,7 +35,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
         danger: true,
         label: "Delete card",
         key: "2",
-        // icon: <DeleteOutlined />,
+        icon: <DeleteOutlined />,
         onClick: () => {},
       },
     ];
