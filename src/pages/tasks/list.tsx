@@ -1,3 +1,4 @@
+import React from "react";
 import {
   KanbanBoardContainer,
   KanbanBoard,
@@ -6,6 +7,7 @@ import {
 } from "@/components";
 import { TASKS_QUERY, TASK_STAGES_QUERY } from "@/graphql/queries";
 import { useList } from "@refinedev/core";
+import { TaskStage } from "@/graphql/schema.types";
 
 export const TasksList = () => {
   const { data: stages, isLoading: isLoadingStages } = useList({
@@ -36,6 +38,9 @@ export const TasksList = () => {
         order: "asc",
       },
     ],
+    queryOptions: {
+      enabled: !!stages,
+    },
     pagination: {
       mode: "off",
     },
@@ -43,6 +48,27 @@ export const TasksList = () => {
       gqlQuery: TASKS_QUERY,
     },
   });
+
+  const taskStages = React.useMemo(() => {
+    if (!tasks?.data || !stages?.data) {
+      return {
+        unnasignedStage: [],
+        stages: [],
+      };
+    }
+
+    const unnasignedStage = tasks.data.filter((task) => task.stageId === null);
+
+    const grouped: TaskStage[] = stages.data.map((stage) => ({
+      ...stage,
+      tasks: tasks.data.filter((task) => task.stageId.toString() === stage.id),
+    }));
+
+    return {
+      unnasignedStage,
+      columns: grouped,
+    };
+  }, [stages, tasks]);
 
   return (
     <>
