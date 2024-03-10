@@ -61,7 +61,7 @@ export const TasksList = () => {
 
     const grouped: TaskStage[] = stages.data.map((stage) => ({
       ...stage,
-      tasks: tasks.data.filter((task) => task.stageId.toString() === stage.id),
+      tasks: tasks.data.filter((task) => task.stageId?.toString() === stage.id),
     }));
 
     return {
@@ -82,10 +82,19 @@ export const TasksList = () => {
             count={taskStages.unnasignedStage.length || 0}
             onAddClick={() => handleAddCard({ stageId: "unnasigned" })}
           >
-            <KanbanItem>This is my first to do</KanbanItem>
+            {taskStages.unnasignedStage.map((task) => (
+              <KanbanItem
+                key={task.id}
+                id={task.id}
+                data={{ ...task, stageId: "unnasigned" }}
+              >
+                {task.title}
+              </KanbanItem>
+            ))}
+            {/* <KanbanItem>This is my first to do</KanbanItem> */}
           </KanbanColumn>
 
-          <KanbanColumn></KanbanColumn>
+          {/* <KanbanColumn></KanbanColumn> */}
         </KanbanBoard>
       </KanbanBoardContainer>
     </>
