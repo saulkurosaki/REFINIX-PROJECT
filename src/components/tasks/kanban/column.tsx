@@ -9,7 +9,7 @@ interface Props {
   description?: React.ReactNode;
   count: number;
   data?: UseDroppableArguments["data"];
-  onAddClick? (args: { id: string }) => void;
+  onAddClick?: (args: { id: string }) => void;
 }
 
 const KanbanColumn = ({
@@ -22,15 +22,13 @@ const KanbanColumn = ({
   onAddClick,
 }: React.PropsWithChildren<Props>) => {
   const { isOver, setNodeRef, active } = useDroppable({
-    id: "",
-    data: "",
+    id,
+    data,
   });
 
-  const count = 2;
-  const description = "Description";
-  const title = "Title";
-
-  const addOnClickHandler = () => {};
+  const addOnClickHandler = () => {
+    onAddClick?.({ id });
+  };
 
   return (
     <div
