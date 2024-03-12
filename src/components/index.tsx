@@ -14,6 +14,7 @@ import KanbanColumn from "./tasks/kanban/column";
 import KanbanItem from "./tasks/kanban/item";
 import ProjectCard from "./tasks/kanban/card";
 import { ProjectCardMemo } from "./tasks/kanban/card";
+import KanbanAddCardButton from "./tasks/kanban/add-card-button";
 
 export {
   UpcomingEvents,
@@ -32,4 +33,5 @@ export {
   KanbanItem,
   ProjectCard,
   ProjectCardMemo,
+  KanbanAddCardButton,
 };
