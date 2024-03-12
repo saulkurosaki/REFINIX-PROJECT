@@ -1,3 +1,4 @@
+import CustomAvatar from "@/components/custom-avatar";
 import { Text } from "@/components/text";
 import { TextIcon } from "@/components/text-icon";
 import { User } from "@/graphql/schema.types";
@@ -14,7 +15,9 @@ import {
   ConfigProvider,
   Dropdown,
   MenuProps,
+  Space,
   Tag,
+  Tooltip,
   theme,
 } from "antd";
 import dayjs from "dayjs";
@@ -140,6 +143,16 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
             >
               {dueDateOptions.text}
             </Tag>
+          )}
+
+          {!!users?.length && (
+            <Space>
+              {users.map((user) => (
+                <Tooltip>
+                  <CustomAvatar name={user.name} src={user.avatarUrl} />
+                </Tooltip>
+              ))}
+            </Space>
           )}
         </div>
       </Card>
