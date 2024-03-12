@@ -4,7 +4,7 @@ import {
   KanbanBoard,
   KanbanColumn,
   KanbanItem,
-  ProjectCard,
+  ProjectCardMemo,
 } from "@/components";
 import { TASKS_QUERY, TASK_STAGES_QUERY } from "@/graphql/queries";
 import { useList } from "@refinedev/core";
@@ -93,7 +93,10 @@ export const TasksList = () => {
                 id={task.id}
                 data={{ ...task, stageId: "unnasigned" }}
               >
-                <ProjectCard {...task} dueData={task.dueDate || undefined} />
+                <ProjectCardMemo
+                  {...task}
+                  dueDate={task.dueDate || undefined}
+                />
               </KanbanItem>
             ))}
           </KanbanColumn>
