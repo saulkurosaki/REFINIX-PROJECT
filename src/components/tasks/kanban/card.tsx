@@ -126,7 +126,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
         >
           <TextIcon style={{ marginRight: "4px" }} />
 
-          {/* {dueDateOptions && (
+          {dueDateOptions && (
             <Tag
               icon={<ClockCircleOutlined style={{ fontSize: "12px" }} />}
               style={{
@@ -140,7 +140,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
             >
               {dueDateOptions.text}
             </Tag>
-          )} */}
+          )}
         </div>
       </Card>
     </ConfigProvider>
