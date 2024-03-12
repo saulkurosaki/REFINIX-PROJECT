@@ -13,7 +13,7 @@ interface Props {
  * @param onClick - a function that is called when the button is clicked.
  * @returns a button that allows you to add a new card to a column.
  */
-export const KanbanAddCardButton = ({
+const KanbanAddCardButton = ({
   children,
   onClick,
 }: React.PropsWithChildren<Props>) => {
@@ -35,3 +35,5 @@ export const KanbanAddCardButton = ({
     </Button>
   );
 };
+
+export default KanbanAddCardButton;
