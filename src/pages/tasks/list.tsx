@@ -5,6 +5,7 @@ import {
   KanbanColumn,
   KanbanItem,
   ProjectCardMemo,
+  KanbanAddCardButton,
 } from "@/components";
 import { TASKS_QUERY, TASK_STAGES_QUERY } from "@/graphql/queries";
 import { useList } from "@refinedev/core";
@@ -99,6 +100,12 @@ export const TasksList = () => {
                 />
               </KanbanItem>
             ))}
+
+            {!taskStages.unnasignedStage.length && (
+              <KanbanAddCardButton
+                onClick={() => handleAddCard({ stageId: "unnasigned" })}
+              />
+            )}
           </KanbanColumn>
         </KanbanBoard>
       </KanbanBoardContainer>
