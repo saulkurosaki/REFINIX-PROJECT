@@ -116,7 +116,7 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
   return (
     <>
       <KanbanBoardContainer>
-        <KanbanBoard>
+        <KanbanBoard onDragEnd={handleOnDragEnd}>
           <KanbanColumn
             id="unnasigned"
             title={"unnasigned"}
