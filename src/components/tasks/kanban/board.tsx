@@ -47,11 +47,11 @@ export const KanbanBoard = ({
     },
   });
 
-  // const touchSensor = useSensor(TouchSensor, {
-  //   activationConstraint: {
-  //     distance: 5,
-  //   },
-  // });
+  const touchSensor = useSensor(TouchSensor, {
+    activationConstraint: {
+      distance: 5,
+    },
+  });
 
   // const sensors = useSensors(mouseSensor, touchSensor);
 
