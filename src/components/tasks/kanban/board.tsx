@@ -53,7 +53,11 @@ export const KanbanBoard = ({
     },
   });
 
-  // const sensors = useSensors(mouseSensor, touchSensor);
+  const sensors = useSensors(mouseSensor, touchSensor);
 
-  return <DndContext onDragEnd={onDragEnd}>{children}</DndContext>; //sensors={sensors}
+  return (
+    <DndContext onDragEnd={onDragEnd} sensors={sensors}>
+      {children}
+    </DndContext>
+  );
 };
