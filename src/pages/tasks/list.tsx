@@ -137,9 +137,9 @@ const PageSkeleton = () => {
     <KanbanBoardContainer>
       {Array.from({ length: columnCount }).map((_, index) => (
         <KanbanColumnSkeleton key={index}>
-          {/* {Array.from({ length: itemCount }).map((_, index) => (
+          {Array.from({ length: itemCount }).map((_, index) => (
             <ProjectCardSkeleton key={index} />
-          ))} */}
+          ))}
         </KanbanColumnSkeleton>
       ))}
     </KanbanBoardContainer>
