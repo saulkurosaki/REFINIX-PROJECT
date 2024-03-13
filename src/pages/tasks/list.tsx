@@ -95,18 +95,18 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
       stageId = null;
     }
 
-    // updateTask({
-    //   resource: 'tasks',
-    //   id: taskId,
-    //   values: {
-    //     stageId: stageId,
-    //   },
-    //   successNotification: false,
-    //   mutationMode: 'optimistic',
-    //   meta: {
-    //     gqlMutation: UPDATE_TASK_STAGE_MUTATION,
-    //   },
-    // });
+    updateTask({
+      resource: "tasks",
+      id: taskId,
+      values: {
+        stageId: stageId,
+      },
+      successNotification: false,
+      mutationMode: "optimistic",
+      meta: {
+        gqlMutation: UPDATE_TASK_STAGE_MUTATION,
+      },
+    });
   };
 
   const isLoading = isLoadingStages || isLoadingTasks;
