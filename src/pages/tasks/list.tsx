@@ -6,6 +6,8 @@ import {
   KanbanItem,
   ProjectCardMemo,
   KanbanAddCardButton,
+  KanbanColumnSkeleton,
+  ProjectCardSkeleton,
 } from "@/components";
 import { TASKS_QUERY, TASK_STAGES_QUERY } from "@/graphql/queries";
 import { useList } from "@refinedev/core";
@@ -78,6 +80,10 @@ export const TasksList = () => {
 
   const handleAddCard = ({ stageId }: { stageId: string }) => {};
 
+  const isLoading = isLoadingStages || isLoadingTasks;
+
+  if (isLoading) return <PageSkeleton />;
+
   return (
     <>
       <KanbanBoardContainer>
@@ -120,5 +126,22 @@ export const TasksList = () => {
         </KanbanBoard>
       </KanbanBoardContainer>
     </>
+  );
+};
+
+const PageSkeleton = () => {
+  const columnCount = 6;
+  const itemCount = 4;
+
+  return (
+    <KanbanBoardContainer>
+      {Array.from({ length: columnCount }).map((_, index) => (
+        <KanbanColumnSkeleton key={index}>
+          {/* {Array.from({ length: itemCount }).map((_, index) => (
+            <ProjectCardSkeleton key={index} />
+          ))} */}
+        </KanbanColumnSkeleton>
+      ))}
+    </KanbanBoardContainer>
   );
 };
