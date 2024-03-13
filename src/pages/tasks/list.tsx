@@ -15,7 +15,7 @@ import { TaskStage } from "@/graphql/schema.types";
 import { GetFieldsFromList } from "@refinedev/nestjs-query";
 import { TasksQuery } from "@/graphql/types";
 
-export const TasksList = () => {
+export const TasksList = ({ children }: React.PropsWithChildren) => {
   const { data: stages, isLoading: isLoadingStages } = useList<TaskStage>({
     resource: "taskStages",
     filters: [
@@ -141,6 +141,8 @@ export const TasksList = () => {
           ))}
         </KanbanBoard>
       </KanbanBoardContainer>
+
+      {children}
     </>
   );
 };
