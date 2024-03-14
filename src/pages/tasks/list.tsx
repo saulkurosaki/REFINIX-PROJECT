@@ -10,7 +10,7 @@ import {
   ProjectCardSkeleton,
 } from "@/components";
 import { TASKS_QUERY, TASK_STAGES_QUERY } from "@/graphql/queries";
-import { useList, useUpdate } from "@refinedev/core";
+import { useList, useNavigation, useUpdate } from "@refinedev/core";
 import { TaskStage } from "@/graphql/schema.types";
 import { GetFieldsFromList } from "@refinedev/nestjs-query";
 import { TasksQuery } from "@/graphql/types";
@@ -18,6 +18,8 @@ import { DragEndEvent } from "@dnd-kit/core";
 import { UPDATE_TASK_STAGE_MUTATION } from "@/graphql/mutations";
 
 export const TasksList = ({ children }: React.PropsWithChildren) => {
+  const { replace } = useNavigation();
+
   const { data: stages, isLoading: isLoadingStages } = useList<TaskStage>({
     resource: "taskStages",
     filters: [
@@ -82,7 +84,14 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
     };
   }, [stages, tasks]);
 
-  const handleAddCard = ({ stageId }: { stageId: string }) => {};
+  const handleAddCard = (args: { stageId: string }) => {
+    const path =
+      args.stageId === "unnasigned"
+        ? "/tasks/new"
+        : `/tasks/new?stageId=${args.stageId}`;
+
+    replace(path);
+  };
 
   const handleOnDragEnd = (event: DragEndEvent) => {
     let stageId = event.over?.id as undefined | string | null;
