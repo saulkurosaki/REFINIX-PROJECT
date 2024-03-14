@@ -44,9 +44,9 @@ export const CreateTask = () => {
           });
         }}
       >
-        {/* <Form.Item label="Title" name="title" rules={[{ required: true }]}>
+        <Form.Item label="Title" name="title" rules={[{ required: true }]}>
           <Input />
-        </Form.Item> */}
+        </Form.Item>
       </Form>
     </Modal>
   );
