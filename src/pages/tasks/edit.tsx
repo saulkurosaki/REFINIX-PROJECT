@@ -1,3 +1,3 @@
-export const TasksEditPage = () => {
-  return <div>TasksEditPage component Test c:</div>;
+export const EditTask = () => {
+  return <div>EditTask component Test c:</div>;
 };

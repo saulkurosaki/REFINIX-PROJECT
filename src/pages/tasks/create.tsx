@@ -1,3 +1,3 @@
-export const TasksCreatePage = () => {
-  return <div>TasksCreatePage component Test c:</div>;
+export const CreateTask = () => {
+  return <div>CreateTask component Test c:</div>;
 };
