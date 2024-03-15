@@ -23,17 +23,17 @@ export const Accordion = (
   isLoading,
 }: Props
 ) => {
-//   if (isLoading) return <AccordionHeaderSkeleton />;
+  if (isLoading) return <AccordionHeaderSkeleton />;
 
-//   const isActive = activeKey === accordionKey;
+  const isActive = activeKey === accordionKey;
 
-//   const toggleAccordion = () => {
-//     if (isActive) {
-//       setActive(undefined);
-//     } else {
-//       setActive(accordionKey);
-//     }
-//   };
+  const toggleAccordion = () => {
+    if (isActive) {
+      setActive(undefined);
+    } else {
+      setActive(accordionKey);
+    }
+  };
 
   return (
     <div
