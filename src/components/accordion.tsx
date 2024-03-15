@@ -11,8 +11,7 @@ type Props = React.PropsWithChildren<{
   label: string;
 }>;
 
-export const Accordion = (
-{
+export const Accordion = ({
   accordionKey,
   activeKey,
   setActive,
@@ -21,8 +20,7 @@ export const Accordion = (
   label,
   children,
   isLoading,
-}: Props
-) => {
+}: Props) => {
   if (isLoading) return <AccordionHeaderSkeleton />;
 
   const isActive = activeKey === accordionKey;
@@ -61,9 +59,9 @@ export const Accordion = (
           {children}
         </div>
       ) : (
-        // <div onClick={toggleAccordion} style={{ cursor: "pointer", flex: 1 }}>
-        //   {fallback}
-        // </div>
+        <div onClick={toggleAccordion} style={{ cursor: "pointer", flex: 1 }}>
+          {fallback}
+        </div>
       )}
     </div>
   );
