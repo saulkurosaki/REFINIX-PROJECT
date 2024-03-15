@@ -1,27 +1,27 @@
 import { AccordionHeaderSkeleton } from "@/components";
 import { Text } from "./text";
 
-// type Props = React.PropsWithChildren<{
-//   accordionKey: string;
-//   activeKey?: string;
-//   setActive: (key?: string) => void;
-//   fallback: string | React.ReactNode;
-//   isLoading?: boolean;
-//   icon: React.ReactNode;
-//   label: string;
-// }>;
+type Props = React.PropsWithChildren<{
+  accordionKey: string;
+  activeKey?: string;
+  setActive: (key?: string) => void;
+  fallback: string | React.ReactNode;
+  isLoading?: boolean;
+  icon: React.ReactNode;
+  label: string;
+}>;
 
 export const Accordion = (
-// {
-//   accordionKey,
-//   activeKey,
-//   setActive,
-//   fallback,
-//   icon,
-//   label,
-//   children,
-//   isLoading,
-// }: Props
+{
+  accordionKey,
+  activeKey,
+  setActive,
+  fallback,
+  icon,
+  label,
+  children,
+  isLoading,
+}: Props
 ) => {
 //   if (isLoading) return <AccordionHeaderSkeleton />;
 
