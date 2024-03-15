@@ -45,7 +45,7 @@ export const Accordion = (
         borderBottom: "1px solid #d9d9d9",
       }}
     >
-      {/* <div style={{ marginTop: "1px", flexShrink: 0 }}>{icon}</div> */}
+      <div style={{ marginTop: "1px", flexShrink: 0 }}>{icon}</div>
       {isActive ? (
         // <div
         //   style={{
