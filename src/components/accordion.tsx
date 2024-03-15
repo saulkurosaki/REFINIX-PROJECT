@@ -47,19 +47,19 @@ export const Accordion = (
     >
       <div style={{ marginTop: "1px", flexShrink: 0 }}>{icon}</div>
       {isActive ? (
-        // <div
-        //   style={{
-        //     display: "flex",
-        //     flexDirection: "column",
-        //     gap: "12px",
-        //     flex: 1,
-        //   }}
-        // >
-        //   <Text strong onClick={toggleAccordion} style={{ cursor: "pointer" }}>
-        //     {label}
-        //   </Text>
-        //   {children}
-        // </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
+            flex: 1,
+          }}
+        >
+          <Text strong onClick={toggleAccordion} style={{ cursor: "pointer" }}>
+            {label}
+          </Text>
+          {children}
+        </div>
       ) : (
         // <div onClick={toggleAccordion} style={{ cursor: "pointer", flex: 1 }}>
         //   {fallback}
