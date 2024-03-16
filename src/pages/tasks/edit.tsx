@@ -99,7 +99,7 @@ export const EditTask = () => {
       </Accordion>
 
       {/* Render the users form inside an accordion */}
-      {/* <Accordion
+      <Accordion
         accordionKey="users"
         activeKey={activeKey}
         setActive={setActiveKey}
@@ -117,7 +117,7 @@ export const EditTask = () => {
           }}
           cancelForm={() => setActiveKey(undefined)}
         />
-      </Accordion> */}
+      </Accordion>
     </Modal>
   );
 };
