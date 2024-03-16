@@ -1,21 +1,22 @@
-import React from "react";
+import { KanbanColumnSkeleton, ProjectCardSkeleton } from "@/components";
+import KanbanAddCardButton from "@/components/tasks/kanban/add-card-button";
 import {
   KanbanBoardContainer,
   KanbanBoard,
-  KanbanColumn,
-  KanbanItem,
-  ProjectCardMemo,
-  KanbanAddCardButton,
-  KanbanColumnSkeleton,
-  ProjectCardSkeleton,
-} from "@/components";
-import { TASKS_QUERY, TASK_STAGES_QUERY } from "@/graphql/queries";
-import { useList, useNavigation, useUpdate } from "@refinedev/core";
-import { TaskStage } from "@/graphql/schema.types";
-import { GetFieldsFromList } from "@refinedev/nestjs-query";
-import { TasksQuery } from "@/graphql/types";
-import { DragEndEvent } from "@dnd-kit/core";
+} from "@/components/tasks/kanban/board";
+import { ProjectCardMemo } from "@/components/tasks/kanban/card";
+import KanbanColumn from "@/components/tasks/kanban/column";
+import KanbanItem from "@/components/tasks/kanban/item";
 import { UPDATE_TASK_STAGE_MUTATION } from "@/graphql/mutations";
+import { TASKS_QUERY, TASK_STAGES_QUERY } from "@/graphql/queries";
+import { TaskStagesQuery, TasksQuery } from "@/graphql/types";
+import { DragEndEvent } from "@dnd-kit/core";
+import { useList, useNavigation, useUpdate } from "@refinedev/core";
+import { GetFieldsFromList } from "@refinedev/nestjs-query";
+import React from "react";
+
+type Task = GetFieldsFromList<TasksQuery>;
+type TaskStage = GetFieldsFromList<TaskStagesQuery> & { tasks: Task[] };
 
 export const TasksList = ({ children }: React.PropsWithChildren) => {
   const { replace } = useNavigation();
@@ -26,7 +27,7 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
       {
         field: "title",
         operator: "in",
-        value: ["TODO", "IN", "IN PROGRESS", "DONE"],
+        value: ["TODO", "IN PROGRESS", "IN REVIEW", "DONE"],
       },
     ],
     sorters: [
@@ -39,7 +40,6 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
       gqlQuery: TASK_STAGES_QUERY,
     },
   });
-
   const { data: tasks, isLoading: isLoadingTasks } = useList<
     GetFieldsFromList<TasksQuery>
   >({
@@ -66,12 +66,12 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
   const taskStages = React.useMemo(() => {
     if (!tasks?.data || !stages?.data) {
       return {
-        unnasignedStage: [],
+        unassignedStage: [],
         stages: [],
       };
     }
 
-    const unnasignedStage = tasks.data.filter((task) => task.stageId === null);
+    const unassignedStage = tasks.data.filter((task) => task.stageId === null);
 
     const grouped: TaskStage[] = stages.data.map((stage) => ({
       ...stage,
@@ -79,14 +79,14 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
     }));
 
     return {
-      unnasignedStage,
+      unassignedStage,
       columns: grouped,
     };
   }, [stages, tasks]);
 
   const handleAddCard = (args: { stageId: string }) => {
     const path =
-      args.stageId === "unnasigned"
+      args.stageId === "unassigned"
         ? "/tasks/new"
         : `/tasks/new?stageId=${args.stageId}`;
 
@@ -100,7 +100,7 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
 
     if (taskStageId === stageId) return;
 
-    if (stageId === "unnasigned") {
+    if (stageId === "unassigned") {
       stageId = null;
     }
 
@@ -127,16 +127,16 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
       <KanbanBoardContainer>
         <KanbanBoard onDragEnd={handleOnDragEnd}>
           <KanbanColumn
-            id="unnasigned"
-            title={"unnasigned"}
-            count={taskStages.unnasignedStage.length || 0}
-            onAddClick={() => handleAddCard({ stageId: "unnasigned" })}
+            id="unassigned"
+            title={"unassigned"}
+            count={taskStages.unassignedStage.length || 0}
+            onAddClick={() => handleAddCard({ stageId: "unassigned" })}
           >
-            {taskStages.unnasignedStage.map((task) => (
+            {taskStages.unassignedStage.map((task) => (
               <KanbanItem
                 key={task.id}
                 id={task.id}
-                data={{ ...task, stageId: "unnasigned" }}
+                data={{ ...task, stageId: "unassigned" }}
               >
                 <ProjectCardMemo
                   {...task}
@@ -145,9 +145,9 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
               </KanbanItem>
             ))}
 
-            {!taskStages.unnasignedStage.length && (
+            {!taskStages.unassignedStage.length && (
               <KanbanAddCardButton
-                onClick={() => handleAddCard({ stageId: "unnasigned" })}
+                onClick={() => handleAddCard({ stageId: "unassigned" })}
               />
             )}
           </KanbanColumn>
@@ -169,7 +169,6 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
                     />
                   </KanbanItem>
                 ))}
-
               {!column.tasks.length && (
                 <KanbanAddCardButton
                   onClick={() => handleAddCard({ stageId: column.id })}
@@ -179,7 +178,6 @@ export const TasksList = ({ children }: React.PropsWithChildren) => {
           ))}
         </KanbanBoard>
       </KanbanBoardContainer>
-
       {children}
     </>
   );
