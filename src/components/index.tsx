@@ -15,6 +15,7 @@ import KanbanItem from "./tasks/kanban/item";
 import ProjectCard from "./tasks/kanban/card";
 import { ProjectCardMemo } from "./tasks/kanban/card";
 import KanbanAddCardButton from "./tasks/kanban/add-card-button";
+import UserTag from "./tags/user-tag";
 
 export {
   UpcomingEvents,
@@ -34,4 +35,13 @@ export {
   ProjectCard,
   ProjectCardMemo,
   KanbanAddCardButton,
+  UserTag,
 };
+
+export * from "./accordion";
+export * from "./tasks/form/description";
+export * from "./tasks/form/due-date";
+export * from "./tasks/form/header";
+export * from "./tasks/form/stage";
+export * from "./tasks/form/title";
+export * from "./tasks/form/users";
