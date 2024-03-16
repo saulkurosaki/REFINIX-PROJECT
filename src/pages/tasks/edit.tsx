@@ -30,13 +30,13 @@ export const EditTask = () => {
 
   const { list } = useNavigation();
 
-  //   const { modalProps, close, queryResult } = useModalForm<Task>({
-  //     action: "edit",
-  //     defaultVisible: true,
-  //     meta: {
-  //       gqlMutation: UPDATE_TASK_MUTATION,
-  //     },
-  //   });
+  const { modalProps, close, queryResult } = useModalForm<Task>({
+    action: "edit",
+    defaultVisible: true,
+    meta: {
+      gqlMutation: UPDATE_TASK_MUTATION,
+    },
+  });
 
   const { description, dueDate, users, title } = queryResult?.data?.data ?? {};
 
