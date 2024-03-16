@@ -67,7 +67,7 @@ export const EditTask = () => {
       <StageForm isLoading={isLoading} />
 
       {/* Render the description form inside an accordion */}
-      {/* <Accordion
+      <Accordion
         accordionKey="description"
         activeKey={activeKey}
         setActive={setActiveKey}
@@ -80,7 +80,7 @@ export const EditTask = () => {
           initialValues={{ description }}
           cancelForm={() => setActiveKey(undefined)}
         />
-      </Accordion> */}
+      </Accordion>
 
       {/* Render the due date form inside an accordion */}
       {/* <Accordion
