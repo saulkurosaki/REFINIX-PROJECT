@@ -83,7 +83,7 @@ export const EditTask = () => {
       </Accordion>
 
       {/* Render the due date form inside an accordion */}
-      {/* <Accordion
+      <Accordion
         accordionKey="due-date"
         activeKey={activeKey}
         setActive={setActiveKey}
@@ -96,7 +96,7 @@ export const EditTask = () => {
           initialValues={{ dueDate: dueDate ?? undefined }}
           cancelForm={() => setActiveKey(undefined)}
         />
-      </Accordion> */}
+      </Accordion>
 
       {/* Render the users form inside an accordion */}
       {/* <Accordion
