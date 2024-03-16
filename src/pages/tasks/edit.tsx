@@ -52,16 +52,16 @@ export const EditTask = () => {
       }}
       title={<TitleForm initialValues={{ title }} isLoading={isLoading} />}
       width={586}
-      //   footer={
-      //     <DeleteButton
-      //       type="link"
-      //       onSuccess={() => {
-      //         list("tasks", "replace");
-      //       }}
-      //     >
-      //       Delete card
-      //     </DeleteButton>
-      //   }
+      footer={
+        <DeleteButton
+          type="link"
+          onSuccess={() => {
+            list("tasks", "replace");
+          }}
+        >
+          Delete card
+        </DeleteButton>
+      }
     >
       {/* Render the stage form */}
       {/* <StageForm isLoading={isLoading} /> */}
