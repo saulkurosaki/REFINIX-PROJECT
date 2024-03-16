@@ -64,7 +64,7 @@ export const EditTask = () => {
       }
     >
       {/* Render the stage form */}
-      {/* <StageForm isLoading={isLoading} /> */}
+      <StageForm isLoading={isLoading} />
 
       {/* Render the description form inside an accordion */}
       {/* <Accordion
